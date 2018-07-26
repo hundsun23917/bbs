@@ -17,6 +17,7 @@ public class TestAct {
         SqlSession sqlSession = sessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = userMapper.selectUserById(1);
+        System.out.println(user.getName());
         sqlSession.close();
     }
 }
