@@ -2,6 +2,7 @@ package testApplicationContext;
 
 import com.haut.bean.User;
 import com.haut.mapper.UserMapper;
+import com.haut.service.UserService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
@@ -19,5 +20,20 @@ public class TestAct {
         User user = userMapper.selectUserById(1);
         System.out.println(user.getName());
         sqlSession.close();
+    }
+    @Test
+    public void testService(){
+        ApplicationContext atx =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+//        SqlSessionFactory sessionFactory = (SqlSessionFactory)atx.getBean("sessionFactory");
+//        SqlSession sqlSession = sessionFactory.openSession();
+//        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+//        User user = userMapper.selectUserById(1);
+        UserService userService = (UserService)atx.getBean(UserService.class);
+        User user = userService.getUserById(1);
+        System.out.println(user.getName());
+
+//        System.out.println(user.getName());
+//        sqlSession.close();
     }
 }

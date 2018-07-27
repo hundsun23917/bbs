@@ -6,8 +6,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--启用注解-->
-    <context:annotation-config></context:annotation-config>
+
     <!--扫描包-->
     <context:component-scan base-package="com.haut">
         <context:exclude-filter type="annotation"
@@ -15,9 +14,11 @@
     </context:component-scan>
     <!--配置数据源-->
     <!--先加载jdbc.properties文件-->
-    <bean id="propertyConfigure" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="jdbc.properties"></property>
-    </bean>
+    <!--<bean id="propertyConfigure" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="location" value="classpath*:jdbc.properties"></property>-->
+    <!--</bean>-->
+    <!--上面的有问题在web项目中上面的不能用，不知道为什么，先记下来-->
+    <context:property-placeholder location="classpath*:jdbc.properties" />
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${jdbc.driver}"></property>
         <property name="url" value="${jdbc.url}"></property>
