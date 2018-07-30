@@ -17,7 +17,7 @@
     <!--<bean id="propertyConfigure" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
         <!--<property name="location" value="classpath*:jdbc.properties"></property>-->
     <!--</bean>-->
-    <!--上面的有问题在web项目中上面的不能用，不知道为什么，先记下来-->
+    <!--上面的有问题在tomcat的web项目中上面的不能用，不知道为什么，先记下来-->
     <context:property-placeholder location="classpath*:jdbc.properties" />
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${jdbc.driver}"></property>
@@ -41,6 +41,10 @@
 
     <!--配置mapper接口-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.haut.mapper"/>
+    </bean>
+    <!--想要用通用mapper的话，要用到通用mapper的映射扫描配置器，即tk.mybatis.spring.mapper.MapperScannerConfigurer-->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.haut.mapper"/>
     </bean>
 </beans>

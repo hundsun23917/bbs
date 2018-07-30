@@ -22,7 +22,11 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <!--处理json-->
+    <!--配置映射器处理器，其他控制器，如json-->
+    <mvc:annotation-driven></mvc:annotation-driven>
 
+    <!--处理静态资源文件-->
+    <mvc:default-servlet-handler/>
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
 
 </beans>

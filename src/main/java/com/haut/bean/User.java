@@ -1,6 +1,11 @@
 package com.haut.bean;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "user")
 public class User {
+    @Id
     private int id;
     private String name;
     private String password;

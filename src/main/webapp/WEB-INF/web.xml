@@ -2,12 +2,10 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaeehttp://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         id="WebApp_ID" version="3.0">
-
-  <display-name>Archetype Created Web Application</display-name>
+<web-app id="starter" version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
   <!--web.xml的加载顺序是context-param >> listener  >> fileter  >> servlet-->
   <!--配置加载spring容器-->
   <context-param>
@@ -31,6 +29,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>springServlet</servlet-name>
+    <!--<url-pattern>*.do</url-pattern>-->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
