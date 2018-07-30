@@ -16,7 +16,11 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper ;
     @Override
     public User getUserById(int id) {
-        User user = userMapper.selectUserById(id);
+        //User user = userMapper.selectUserById(id);
+        //User user = userMapper.selectByPrimaryKey(id);
+        User user1 = new User();
+        user1.setId(1);
+        User user = userMapper.selectOne(user1);
         return user;
     }
 

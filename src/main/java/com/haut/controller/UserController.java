@@ -21,7 +21,7 @@ public class UserController {
     @RequestMapping("/getUser")
     public ModelAndView  getUser(int id){
         User user = userService.getUserById(id);
-        System.out.println(user.getName());
+        //System.out.println(user.getName());
         ModelAndView mav= new ModelAndView();
         mav.addObject("user",user);
 //        mav.addObject("str","String");
@@ -39,7 +39,7 @@ public class UserController {
     public List<User> getAllUsers(){
         List<User> list = userService.getAllUsers();
         for (User user : list){
-            System.out.println(user.getName());
+           // System.out.println(user.getName());
         }
         return list;
     }

@@ -40,9 +40,9 @@
     </bean>
 
     <!--配置mapper接口-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.haut.mapper"/>
-    </bean>
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="basePackage" value="com.haut.mapper"/>-->
+    <!--</bean>-->
     <!--想要用通用mapper的话，要用到通用mapper的映射扫描配置器，即tk.mybatis.spring.mapper.MapperScannerConfigurer-->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.haut.mapper"/>

@@ -6,5 +6,5 @@ import tk.mybatis.mapper.common.Mapper;
 
 @Repository
 public interface UserMapper extends Mapper<User> {
-    User selectUserById(int id);
+    //User selectUserById(int id);
 }

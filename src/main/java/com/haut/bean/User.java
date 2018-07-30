@@ -1,20 +1,26 @@
 package com.haut.bean;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.SelectKey;
+
+import javax.persistence.*;
 
 @Table(name = "user")
 public class User {
+
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private String password;
 
-    public int getId() {
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
